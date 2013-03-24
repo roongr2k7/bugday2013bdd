@@ -1,0 +1,13 @@
+<h1>Registration Page</h1>
+
+<% if @registrant.errors.any? %>
+  <% @registrant.errors.full_messages.each do |error_message| %>
+  <div><%= error_message  %></div>
+  <% end %>
+<% end %>
+
+<%= form_for @registrant do |registrant_form| %>
+  <%= registrant_form.text_field :name %>
+  <%= registrant_form.text_field :email %>
+  <%= registrant_form.submit 'Register' %>
+<% end %>
